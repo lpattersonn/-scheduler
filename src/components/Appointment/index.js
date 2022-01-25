@@ -10,8 +10,8 @@ import "./styles.scss";
 
 export default function Appointment(props) {
   return (
-    <main>
-      <article className="appointment">
+    <main className="appointment">
+      <article >
         {props.time ? <Header time={props.time} /> : "No Appointement"}
       </article>
       {props.interview ? ( 
