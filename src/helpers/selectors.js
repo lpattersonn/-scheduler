@@ -9,7 +9,6 @@ export default function getAppointmentsForDay(state, day) {
       for (let ele of elements.appointments) {
         // Iterate through state.appointments
         for (let key in sessions) {
-          const number = Number(key);
           // Push the value of state.appointment.id to the app array
           if (Number(key) === ele) {
             app.push(sessions[key]);

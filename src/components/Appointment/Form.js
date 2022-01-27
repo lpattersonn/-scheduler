@@ -8,9 +8,7 @@ export default function Form(props) {
   
   const [student, setStudent] = useState(props.student || "");
   const [interviewer, setInterviewer] = useState(props.interviewer || null);
-  const cancel = function () {
-    return setInterviewer(""), setStudent(""), props.onCancel;
-  };
+  
   return (
     <main className="appointment__card appointment__card--create">
       <section className="appointment__card-left">

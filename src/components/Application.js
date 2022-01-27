@@ -67,12 +67,21 @@ export default function Application(props) {
       ...state,
       appointments,
     });
-    return axios.put(`/api/appointments/${id}`, { interview })
-    .then((res) => {
-      console.log(state)
-    })
-    .catch((err) => {console.log(err.message)})
+    return axios
+      .put(`/api/appointments/${id}`, { interview })
+      .then((res) => {
+        console.log(state);
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  }
 
+  // cancelInterview function
+  function cancelInterview(id) {
+    return axios
+      .delete(`/api/appointments/${id}`)
+      .then((res) => console.log(state));
   }
 
   const setDay = (day) => setState({ ...state, day });
@@ -90,6 +99,7 @@ export default function Application(props) {
         interview={interview}
         interviewers={interviewersItem}
         bookInterview={bookInterview}
+        cancelInterview={cancelInterview}
       />
     );
   });
