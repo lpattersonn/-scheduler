@@ -12,6 +12,8 @@ import Confirm from "./Confirm";
 
 import Status from "./Status";
 
+import Error from "./Error";
+
 import "./styles.scss";
 
 import useVisualMode from "hooks/useVisualMode";
@@ -31,6 +33,10 @@ const DELETING = "DELETING";
 const CONFIRM = "CONFIRM";
 
 const EDIT = "EDIT";
+
+const ERROR_SAVE = "ERROR_SAVE"
+
+const ERROR_DELETE = "ERROR_DELETE"
 
 export default function Appointment(props) {
   const { mode, transition, back } = useVisualMode(
@@ -55,23 +61,23 @@ export default function Appointment(props) {
     transition(SAVING);
     props
       .bookInterview(props.id, interview)
-      .then((res) => {
+      .then(() => {
         transition(SHOW);
         window.location.reload();
       })
-      .catch((err) => console.log(err.message));
+      .catch((err) => transition(ERROR_SAVE));
   }
 
   // cancelInterview
   function cancel() {
-    transition(DELETING);
+    transition(DELETING, true);
     props
       .cancelInterview(props.id)
-      .then((res) => {
+      .then((r) => {
         transition(EMPTY);
         window.location.reload();
       })
-      .catch((err) => console.log(err.message));
+      .catch((err) => transition(ERROR_DELETE, true));
   }
 
   return (
@@ -110,6 +116,8 @@ export default function Appointment(props) {
           onSave={save}
         />
       )}
+      {mode === ERROR_SAVE && <Error message="Please try again" onClose={() => transition(SHOW)}/>}
+      {mode === ERROR_DELETE && <Error message="Please try again" onClose={() => transition(SHOW)}/>}
     </article>
   );
 }
