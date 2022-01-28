@@ -5,7 +5,7 @@ import React, { useState, useEffect } from "react";
 import Appointment from "components/Appointment";
 import getAppointmentsForDay from "helpers/selectors";
 import { getInterview, getInterviewersForDay } from "helpers/selectors";
-
+import useApplicationData from "hooks/useApplicationData";
 // const appointments = [
 //   {
 //     id: 1,
@@ -46,46 +46,9 @@ import { getInterview, getInterviewersForDay } from "helpers/selectors";
 // ];
 
 export default function Application(props) {
-  const [state, setState] = useState({
-    day: "Monday",
-    days: [],
-    appointments: {},
-    interviewers: {},
-  });
 
-  // bookInterview function
-  function bookInterview(id, interview) {
-    const appointment = {
-      ...state.appointments[id],
-      interview: { ...interview },
-    };
-    const appointments = {
-      ...state.appointments,
-      [id]: appointment,
-    };
-    setState({
-      ...state,
-      appointments,
-    });
-    return axios
-      .put(`/api/appointments/${id}`, { interview })
-      .then((res) => {
-        console.log(state);
-      })
-      .catch((err) => {
-        console.log(err.message);
-      });
-  }
-
-  // cancelInterview function
-  function cancelInterview(id) {
-    return axios
-      .delete(`/api/appointments/${id}`)
-      .then((res) => console.log(state));
-  }
-
-  const setDay = (day) => setState({ ...state, day });
-
+  const {state, setState, setDay, bookInterview, cancelInterview} = useApplicationData();
+  
   const dailyAppointments = getAppointmentsForDay(state, state.day);
   const interviewersItem = getInterviewersForDay(state, state.day);
 
@@ -129,7 +92,7 @@ export default function Application(props) {
         />
         <hr className="sidebar__separator sidebar--centered" />
         <nav className="sidebar__menu">
-          <DayList days={state.days} value={state.day} onChange={setDay} />
+          <DayList days={state.days} day={state.day} setDay={setDay} />
         </nav>
         <img
           className="sidebar__lhl sidebar--centered"
