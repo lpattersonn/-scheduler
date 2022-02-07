@@ -1,23 +1,76 @@
 # Interview Scheduler
 
-## Setup
+## About The Project
 
-Install dependencies with `npm install`.
+Quiz! is an app that lets you create quizzes and share them between friends. The creator of the quiz can view and share all the results at the end of the quiz. This app was built by Abyan Mohamed, and Leshan Patterson.
 
-## Running Webpack Development Server
+![app home page](https://github.com/lpattersonn/midterm-group-5/blob/master/public/ducuments/images/homepage.png?raw=true)
 
-```sh
-npm start
-```
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-## Running Jest Test Framework
+### Built With
 
-```sh
-npm test
-```
+* [React](https://reactjs.org/)
 
-## Running Storybook Visual Testbed
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-```sh
-npm run storybook
-```
+<!-- GETTING STARTED -->
+
+### Installation
+
+1. Clone the repo
+   ```sh 
+   git clone https://github.com/lpattersonn/scheduler.git
+   ```
+2. Install NPM packages
+   ```sh
+   npm i
+   ```
+3. Clone the repo for scheduler-api
+   ```sh 
+   git clone https://github.com/lpattersonn/scheduler-api.git
+   ```
+4. Install NPM packages for scheduler-api
+   ```sh
+   npm i
+   ```
+5. In a seperate terminal while in the cloned scheduler-api project directory enter the following command
+   ```sh
+   npm start
+   ```
+6. In your terminal while in the cloned scheduler project directory enter the following command
+   ```sh
+   npm start
+   ```
+   
+<p align="right">(<a href="#top">back to top</a>)</p>
+<!-- ROADMAP -->
+<!-- CONTRIBUTING -->
+## Contributing
+
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+Don't forget to give the project a star! Thanks again!
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<!-- CONTACT -->
+## Contact
+
+Leshan Patterson - [@lpatters](https://ca.linkedin.com/in/lpatters)
+
+Project Link: [https://github.com/scheduler.git](https://github.com/lpattersonn/scheduler.git)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<!-- ACKNOWLEDGMENTS -->
+## Acknowledgments
+
+* [React](https://www.webpagefx.com/tools/emoji-cheat-sheet)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
