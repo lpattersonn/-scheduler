@@ -77,8 +77,3 @@ Project Link: [https://github.com/scheduler.git](https://github.com/lpattersonn/
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
-
-* [React](https://www.webpagefx.com/tools/emoji-cheat-sheet)
-
-<p align="right">(<a href="#top">back to top</a>)</p>
