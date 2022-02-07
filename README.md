@@ -5,21 +5,20 @@
 Interview Scheduler is a modern client application built using the React view library. Interview Scheduler is built using the latest tools and techniques. A concise API with a WebSocket server was used to build a realtime experience.
 
 ![app home page](https://github.com/lpattersonn/scheduler/blob/master/public/images/scheduler.png?raw=true)
-![app home page](https://github.com/lpattersonn/scheduler/blob/master/public/images/scheduler.png?raw=true)
+![app home page](https://github.com/lpattersonn/scheduler/blob/master/public/images/scheduler3.png?raw=true)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Built With
 
-* [React](https://reactjs.org/)
-* [Webpack](https://reactjs.org/)
-* [Babel](https://reactjs.org/)
-* [Axios](https://reactjs.org/)
-* [WebSockets](https://reactjs.org/)
-* [Webpack Dev Server](https://reactjs.org/)
-* [Jest](https://reactjs.org/)
-* [Testing Library](https://reactjs.org/)
-
+- [React](https://reactjs.org/)
+- [Webpack](https://reactjs.org/)
+- [Babel](https://reactjs.org/)
+- [Axios](https://reactjs.org/)
+- [WebSockets](https://reactjs.org/)
+- [Webpack Dev Server](https://reactjs.org/)
+- [Jest](https://reactjs.org/)
+- [Testing Library](https://reactjs.org/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -28,7 +27,7 @@ Interview Scheduler is a modern client application built using the React view li
 ### Installation
 
 1. Clone the repo
-   ```sh 
+   ```sh
    git clone https://github.com/lpattersonn/scheduler.git
    ```
 2. Install NPM packages
@@ -36,7 +35,7 @@ Interview Scheduler is a modern client application built using the React view li
    npm i
    ```
 3. Clone the repo for scheduler-api
-   ```sh 
+   ```sh
    git clone https://github.com/lpattersonn/scheduler-api.git
    ```
 4. Install NPM packages for scheduler-api
@@ -51,7 +50,7 @@ Interview Scheduler is a modern client application built using the React view li
    ```sh
    npm start
    ```
-   
+
 <p align="right">(<a href="#top">back to top</a>)</p>
 <!-- ROADMAP -->
 <!-- CONTRIBUTING -->
@@ -69,6 +68,7 @@ Don't forget to give the project a star! Thanks again!
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- CONTACT -->
+
 ## Contact
 
 Leshan Patterson - [@lpatters](https://ca.linkedin.com/in/lpatters)
