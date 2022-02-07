@@ -2,15 +2,23 @@
 
 ## About The Project
 
-Quiz! is an app that lets you create quizzes and share them between friends. The creator of the quiz can view and share all the results at the end of the quiz. This app was built by Abyan Mohamed, and Leshan Patterson.
+Interview Scheduler is a modern client application built using the React view library. Interview Scheduler is built using the latest tools and techniques. A concise API with a WebSocket server was used to build a realtime experience.
 
-![app home page](https://github.com/lpattersonn/midterm-group-5/blob/master/public/ducuments/images/homepage.png?raw=true)
+![app home page](https://github.com/lpattersonn/scheduler/blob/master/public/images/scheduler.png?raw=true)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Built With
 
 * [React](https://reactjs.org/)
+* [Webpack](https://reactjs.org/)
+* [Babel](https://reactjs.org/)
+* [Axios](https://reactjs.org/)
+* [WebSockets](https://reactjs.org/)
+* [Webpack Dev Server](https://reactjs.org/)
+* [Jest](https://reactjs.org/)
+* [Testing Library](https://reactjs.org/)
+
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
