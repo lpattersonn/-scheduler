@@ -21,35 +21,46 @@ export default function getAppointmentsForDay(state, day) {
   return app;
 }
 
+// export function getInterview(state, interview) {
+//   let result = {};
+//   //console.log(interview)
+//   if (!interview) {
+//     return null;
+//   }
+//   for (let item in state.appointments) {
+//     if (state.appointments[item].interview) {
+//       let id = state.appointments[item].interview.interviewer;
+//       for (let key in state.interviewers) {
+//         if (state.interviewers[key].id === id) {
+//           result.student = state.appointments[item].interview.student;
+//           result.interviewer = state.interviewers[key];
+//         }
+//       }
+//     }
+//   }
+// }
 export function getInterview(state, interview) {
   let result = {};
-  //console.log(interview)
+  console.log("Interview data is", interview);
   if (!interview) {
     return null;
   }
-  for (let item in state.appointments) {
-    if (state.appointments[item].interview) {
-      let id = state.appointments[item].interview.interviewer;
-      for (let key in state.interviewers) {
-        if (state.interviewers[key].id === id) {
-          result.student = state.appointments[item].interview.student;
-          result.interviewer = state.interviewers[key];
-        }
-      }
-    }
-  }
-
+  result.student = interview.student;
+  result.interviewer = state.interviewers[interview.interviewer];
   return result;
 }
 
 export function getInterviewersForDay(state, dayName) {
-  const filteredAppointments = state.days.filter(day=> day.name === dayName).map(d=> d.appointments).flat();
+  const filteredAppointments = state.days
+    .filter((day) => day.name === dayName)
+    .map((d) => d.interviewers)
+    .flat();
   //console.log(filteredAppointments)
   const interviewer = [];
-  for (const appointmentId of filteredAppointments ) {
-   // console.log(appointmentId)
-    if(state.interviewers[appointmentId]){
-      interviewer.push(state.interviewers[appointmentId]);
+  for (const interviewerId of filteredAppointments) {
+    // console.log(appointmentId)
+    if (state.interviewers[interviewerId]) {
+      interviewer.push(state.interviewers[interviewerId]);
     }
   }
   //console.log(interviewer)
