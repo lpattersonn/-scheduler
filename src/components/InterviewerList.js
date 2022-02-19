@@ -1,30 +1,28 @@
 import React from "react";
+import 'components/InterviewerList.scss';
+import InterviewerListItem from "./InterviewerListItem.js";
+import PropTypes from "prop-types";
 
-import PropTypes from "prop-types"
+export default function InterviewerList(props){
 
-import "components/InterviewerList.scss";
-
-import InterviewerListItem from "components/InterviewerListItem";
-
-export default function InterviewerList(props) {
-   //const { interviewers, setInterviewer, interviewer } = props;
-   const interviewers = props.interviewers.map((interviewer) => {
-   return ( <InterviewerListItem 
+  const interviewersList = props.interviewers.map(interviewer => {
+    return <InterviewerListItem
     key={interviewer.id}
     name={interviewer.name}
     avatar={interviewer.avatar}
-    selected={interviewer.id === props.value}
-    setInterviewer={() => props.onChange(interviewer.id)}    
-  />
-   );
-  });
-  // Render the new day list item inside a ul tag
-  return (
-    <section className="interviewers">
-      <h4 className="interviewers__header text--light">Interviewer</h4>
-      <ul className="interviewers__list">{interviewers}</ul>
-    </section>
-  );
+    selected={props.interviewer === interviewer.id}
+    setInterviewer={event => props.setInterviewer(interviewer.id)}
+    />
+  })
+
+  return(
+      <section className="interviewers">
+        <h4 className="interviewers__header text--light">Interviewer</h4>
+        <ul className="interviewers__list">
+          {interviewersList}
+        </ul>
+      </section>
+  )
 }
 
 InterviewerList.propTypes = {

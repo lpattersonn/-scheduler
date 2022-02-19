@@ -43,15 +43,6 @@ export default function Appointment(props) {
     props.interview ? SHOW : EMPTY
   );
 
-  // useEffect(() => {
-  //   if (props.interview && mode === EMPTY) {
-  //     transition(SHOW);
-  //   }
-  //   if (props.interview === null && mode === SHOW) {
-  //     transition(EMPTY);
-  //   }
-  // });
-
   // bookInterview
   function save(name, interviewer) {
     const interview = {
