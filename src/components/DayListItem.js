@@ -1,14 +1,16 @@
+// Imports
 import React from "react";
 import classnames from "classnames";
 import "components/DayListItem.scss";
 
+// DayListItem function
 export default function DayListItem(props) {
   const dayListItemClass = classnames("day-list__item", {
     "day-list__item--selected": props.selected,
     "day-list__item--full": props.spots === 0,
   });
 
-  //This function returns a corresponding text based on the number of the spots
+  // FormatSpots function
   const formatSpots = function () {
     const numOfSpots = props.spots;
     if (numOfSpots === 0) return "no spots remaining";

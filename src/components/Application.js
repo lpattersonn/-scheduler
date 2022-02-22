@@ -1,3 +1,4 @@
+// Imports
 import React from "react";
 import useApplicationData from "hooks/useApplicationData";
 import "components/Application.scss";
@@ -9,6 +10,7 @@ import {
   getInterviewersForDay,
 } from "../helpers/selectors";
 
+// Application function
 export default function Application(props) {
   const { state, setDay, bookInterview, cancelInterview } =
     useApplicationData();
