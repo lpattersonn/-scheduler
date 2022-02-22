@@ -1,36 +1,35 @@
 import React, { useState } from "react";
-import InterviewerList from "components/InterviewerList.js";
 import Button from "components/Button";
+import InterviewerList from "components/InterviewerList";
 
 export default function Form(props) {
-  const [name, setName] = useState(props.name || "");
   const [interviewer, setInterviewer] = useState(props.interviewer || null);
+  const [name, setName] = useState(props.name || "");
   const [error, setError] = useState("");
 
   const reset = function () {
     setName("");
-    setError("");
     setInterviewer(null);
   };
-
   const cancel = function () {
     reset();
     props.onCancel();
   };
 
-  const validate = function () {
+  //to validate that the name input and instructor fields are not empty
+  function validate() {
     if (name === "") {
       setError("Student name cannot be blank");
       return;
     }
+
     if (!interviewer) {
       setError("Please select an interviewer");
       return;
     }
-
     setError("");
     props.onSave(name, interviewer);
-  };
+  }
 
   return (
     <main className="appointment__card appointment__card--create">
@@ -38,6 +37,7 @@ export default function Form(props) {
         <form autoComplete="off" onSubmit={(event) => event.preventDefault()}>
           <input
             className="appointment__create-input text--semi-bold"
+            // name="name"
             name={props.name}
             type="text"
             placeholder="Enter Student Name"
@@ -50,7 +50,7 @@ export default function Form(props) {
         <InterviewerList
           interviewers={props.interviewers}
           interviewer={interviewer}
-          setInterviewer={setInterviewer}
+          onChange={setInterviewer}
         />
       </section>
       <section className="appointment__card-right">

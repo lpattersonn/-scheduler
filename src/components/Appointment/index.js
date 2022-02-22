@@ -1,13 +1,14 @@
-import "./styles.scss";
 import React from "react";
+import "./styles.scss";
+
 import Header from "./Header";
 import Show from "./Show";
 import Empty from "./Empty";
+import useVisualMode from "../../hooks/useVisualMode";
 import Form from "./Form";
 import Status from "./Status";
 import Confirm from "./Confirm";
 import Error from "./Error";
-import useVisualMode from "hooks/useVisualMode";
 
 export default function Appointment(props) {
   const EMPTY = "EMPTY";
@@ -20,6 +21,7 @@ export default function Appointment(props) {
   const ERROR_DELETE = "ERROR_DELETE";
   const DELETING = "DELETING";
 
+  //destructure the required mode and functions from useVisualMode
   const { mode, transition, back } = useVisualMode(
     props.interview ? SHOW : EMPTY
   );
@@ -29,15 +31,18 @@ export default function Appointment(props) {
       student: name,
       interviewer,
     };
-
     transition(SAVING);
 
+    //in Application.js, we used return axios which will return a promise, so we need to use .then() here,  .then uses an anonymous callback function
     props
       .bookInterview(props.id, interview)
-      .then(() => transition(SHOW))
+      .then(() => {
+        transition(SHOW);
+      })
       .catch(() => transition(ERROR_SAVE, true));
   }
 
+  //remove function
   function remove() {
     transition(DELETING, true);
 
@@ -50,13 +55,14 @@ export default function Appointment(props) {
   }
 
   return (
-    <article className="appointment">
+    <article className="appointment" data-testid="appointment">
       <Header time={props.time} />
       {mode === EMPTY && <Empty onAdd={() => transition(CREATE)} />}
       {mode === SHOW && (
         <Show
           interview={props.interview}
           onDelete={() => transition(CONFIRM)}
+          //for editing the appointment
           onEdit={() => transition(EDIT)}
         />
       )}

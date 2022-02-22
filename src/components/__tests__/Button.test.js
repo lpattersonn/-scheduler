@@ -15,7 +15,7 @@ it("renders its `children` prop as text", () => {
   expect(getByText("Default")).toBeInTheDocument();
 });
 
-new Int32Array("renders a default button style", () => {
+it("renders a default button style", () => {
   const { getByText } = render(<Button>Default</Button>);
   expect(getByText("Default")).toHaveClass("button");
 });

@@ -1,5 +1,4 @@
 import React from "react";
-import "components/Appointment/styles.scss";
 
 export default function Status(props) {
   return (
@@ -9,7 +8,7 @@ export default function Status(props) {
         src="images/status.png"
         alt="Loading"
       />
-      <h1 className="text--semi-bold">{props.status}</h1>
+      <h1 className="text--semi-bold">{props.message}</h1>
     </main>
   );
 }
