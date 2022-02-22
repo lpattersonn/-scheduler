@@ -4,7 +4,6 @@
 
 Interview Scheduler is a modern client application built using the React view library. Interview Scheduler is built using the latest tools and techniques. A concise API with a WebSocket server was used to build a realtime experience.
 
-![app home page](https://github.com/lpattersonn/scheduler/blob/master/public/images/scheduler.png?raw=true)
 ![app home page](https://github.com/lpattersonn/scheduler/blob/master/public/images/scheduler3.png?raw=true)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
